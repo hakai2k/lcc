@@ -1,0 +1,49 @@
+:root{
+    --bgColor: #eff0f3;
+    --headerColor: #0d0d0d;
+    --paraColor: #2a2a2a;
+    --btnColor: #ff8e3c;
+    --btnText: #0d0d0d;
+}
+
+@font-face {
+    font-family: 'Product Sans Regular';
+    src: url('fonts/product-sans/Product Sans Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body{
+    background-color: var(--bgColor);
+    font-family: 'Product Sans Regular';
+}
+
+nav{
+    padding: 0% 10%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.links a{
+    text-decoration: none;
+    padding: 0em 2em;
+    color: var(--btnText);
+}
+
+
+.test-model-btn{
+    text-decoration: none;
+    color: var(--btnText);
+    padding: 1em 2em;
+    background-color: var(--btnColor);
+    border-radius: 15px;
+}
