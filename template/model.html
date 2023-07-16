@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../static/css/model.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Model</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Predictions Page</h1>
+    <form id="preForm" method="post" enctype="multipart/form-data" action="http://127.0.0.1:5000/model.html">
+        <input type="file" id="image" name="image" accept="image/*">
+        <input type="radio" id="gender" name="gender" value="M">Male
+        <input type="radio" id="gender" name="gender" value="F">Female
+        <input type="text" id="age" name="age">
+        <input type="radio" id="view" name="view" value="AP">AP
+        <input type="radio" id="view" name="view" value="PA">PA
+        <input type="submit" class="submit">
+    </form>
+    <script>
+        const URL = 'http://127.0.0.1:5000/model.html'
+        const preForm = document.getElementById('preForm')
+        preForm.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            const data = new FormData(preForm)
+            const response = await fetch(URL, {method:'POST', body:data})
+            const prediction = await response.json()
+            console.log(prediction)
+        }) 
+    </script>
 </body>
 </html>
