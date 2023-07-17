@@ -1,10 +1,11 @@
 :root{
-    --bgColor: #eff0f3;
-    --headerColor: #0d0d0d;
-    --paraColor: #2a2a2a;
-    --btnColor: #ff8e3c;
-    --btnBorder: #fd791b;
-    --btnText: #0d0d0d;
+    --bgColor: #16161a;
+    --headerColor: #fffffe;
+    --paraColor: #94a1b2;
+    --btnColor: #7f5af0;
+    --btnText: #fffffe;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
 }
 
 @font-face {
@@ -23,7 +24,7 @@ body::-webkit-scrollbar{
 }
 
 body::-webkit-scrollbar-thumb{
-    background-color: var(--btnBorder);
+    background-color: var(--btnColor);
 }
 
 body{
@@ -59,15 +60,17 @@ header {
 }
 
 .test-now-btn {
-    padding: 1em 2em;
+    padding: 0.8em 2em;
     background-color: var(--btnColor);
-    border: solid var(--btnBorder);
-    border-radius: 15px;
+    border-radius: 5px;
+    color: var(--btnText)
 }
 
 main{
     height: 90vh;
 }
+
+
 
 .about{
     height: 100vh;
