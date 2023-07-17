@@ -3,6 +3,7 @@
     --headerColor: #0d0d0d;
     --paraColor: #2a2a2a;
     --btnColor: #ff8e3c;
+    --btnBorder: #fd791b;
     --btnText: #0d0d0d;
 }
 
@@ -11,11 +12,18 @@
     src: url('fonts/product-sans/Product Sans Regular.ttf');
 }
 
-*{
+* {
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar{
+    width: 0.5vw;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--btnBorder);
 }
 
 body{
@@ -23,27 +31,56 @@ body{
     font-family: 'Product Sans Regular';
 }
 
-nav{
-    padding: 0% 10%;
+header {
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0% 10%;
     position: sticky;
     top: 0;
+    box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
+    background-color: var(--bgColor)
 }
 
-.links a{
+.links a,
+.test-now-btn{
+    color: var(--headerColor);
     text-decoration: none;
-    padding: 0em 2em;
-    color: var(--btnText);
 }
 
+.links {
+    list-style: none;
+    display: flex;
+}  
 
-.test-model-btn{
-    text-decoration: none;
-    color: var(--btnText);
+.links li {
+    padding: 5px 20px;
+}
+
+.test-now-btn {
     padding: 1em 2em;
     background-color: var(--btnColor);
+    border: solid var(--btnBorder);
     border-radius: 15px;
+}
+
+main{
+    height: 90vh;
+}
+
+.about{
+    height: 100vh;
+}
+
+.tech{
+    height: 100vh;
+}
+
+.contact{
+    height: 70vh;
+}
+
+footer{
+    height: 30vh;
 }
