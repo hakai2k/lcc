@@ -1,5 +1,6 @@
 :root{
     --bgColor: #16161a;
+    --bgColor2: #242629;
     --headerColor: #fffffe;
     --paraColor: #94a1b2;
     --btnColor: #7f5af0;
@@ -111,12 +112,18 @@ main{
 .try-now{
     margin-top: 1em;
     font-size: 30px;
-    padding: 0.8em 2em;
+    padding: 0.4em 1.5em;
     background-color: var(--btnColor);
     border-radius: 5px;
     color: var(--btnText);
     text-decoration: none;
-    
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.try-now:hover{
+    transition: 0.2s;
+    filter: drop-shadow(0 0 6px #7f5af0);
 }
 
 .main-div1 p span{
@@ -133,12 +140,13 @@ main{
         filter: drop-shadow(0 0 0px #7f5af0);
     }
     to{
-        filter: drop-shadow(0 0 6px #7f5af0);
+        filter: drop-shadow(0 0 2px #7f5af0);
     }
 }
 
 .about{
     height: 100vh;
+    background-color: var(--bgColor2);
 }
 
 .tech{
@@ -147,6 +155,7 @@ main{
 
 .contact{
     height: 70vh;
+    background-color: var(--bgColor2);
 }
 
 footer{
