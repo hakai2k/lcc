@@ -1,0 +1,100 @@
+:root{
+    --bgColor: #151519;
+    --bgColor2: #242629;
+    --headerColor: #fffffe;
+    --paraColor: #94a1b2;
+    --btnColor: #7f5af0;
+    --btnText: #fffffe;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
+}
+
+::placeholder{
+    color: var(--paraColor);
+}
+
+.contact{
+    padding: 5% 10%;
+    background-color: var(--bgColor);
+    display: grid;
+    grid-template-areas: 
+    "heading heading"
+    "form info";
+    gap: 4rem;
+    & h1{
+        color: var(--headerColor);
+        font-size: 35px;
+        grid-area: heading;
+    }
+}
+
+.contact-form-container{
+    background-color: var(--bgColor2);
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
+    grid-area: form;
+}
+
+.contact-form-container{
+    padding: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    & h3{
+        color: var(--headerColor);
+    }
+}
+
+.contact-form{
+    height: 35vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    & input {
+        height: 3em;
+        width: 40vw;
+        background-color: var(--bgColor2);
+        border: 3px solid var(--bgColor);
+        border-radius: 5px;
+        color: var(--paraColor);
+        box-shadow: 0px 2px 20px 0.5px rgb(21, 21, 25, 0.2);
+    }
+}
+
+.contact-message {
+    height: 6em;
+    width: 40vw;
+    background-color: var(--bgColor2);
+    border: 3px solid var(--bgColor);
+    border-radius: 5px;
+    color: var(--paraColor);
+    resize: none;
+}
+
+.send{
+    font-size: 16px;
+    cursor: pointer;
+    height: 3em;
+    width: 7em;
+    background-color: var(--btnColor);
+    color: var(--headerColor);
+    border: none;
+    border-radius: 7px;
+}
+
+.contact-form-main{
+    display: flex;
+    gap: 2rem;
+}
+
+.contact-info{
+    /* height: 45vh;
+    width: 30vw; */
+    background-color: var(--bgColor2);
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
+    grid-area: info;
+}
