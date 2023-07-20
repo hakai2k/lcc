@@ -1,0 +1,17 @@
+:root{
+    --bgColor: #16161a;
+    --bgColor2: #242629;
+    --headerColor: #fffffe;
+    --paraColor: #94a1b2;
+    --btnColor: #7f5af0;
+    --btnText: #fffffe;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
+}
+
+footer{
+    padding: 0% 10%;
+    height: 35vh;
+    background-color: var(--bgColor);
+    box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
+}

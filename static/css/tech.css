@@ -8,3 +8,41 @@
     --secondary: #72757e;
     --tertiary: #2cb67d;
 }
+
+.tech{
+    padding: 5% 10%;
+    background-color: var(--bgColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech-heading{
+    font-size: 35px;
+    color: var(--headerColor);
+}
+
+.tech-cards{
+    margin: 2em 0em;
+    height: 25vh;
+    width: 76vw;
+    background-color: var(--bgColor2);
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
+    /* border: 2px solid var(--btnColor); */
+    transition: 0.2s;
+    display: flex;
+    align-items: left;
+    justify-content: space-evenly;
+}
+
+.tech-cards div{
+    margin: 0em 3em;
+}
+
+
+.tech-cards:hover{
+    transition: 0.2s;
+    box-shadow: 0px 2px 20px 0.5px rgba(99, 99, 99, 0.2);
+}
+

@@ -1,0 +1,8 @@
+numpy
+pandas
+glob
+tensorflow
+opencv-python
+matplotlib
+sklearn
+tqdm

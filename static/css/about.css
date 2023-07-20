@@ -10,6 +10,7 @@
 }
 
 .about{
+    height: 180vh;
     padding: 5% 10%;
     background-color: var(--bgColor);
     display: flex;
@@ -19,14 +20,12 @@
 }
 
 .about-heading{
-    margin-bottom: 2em;
     text-align: center;
     color: var(--headerColor);
 }
 
 .about-heading h1{
     font-size: 35px;
-    margin-bottom: 5px;
 }
 
 .about-heading p{
@@ -36,12 +35,12 @@
 .about-content{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .about-cards{
-    margin: 2em 2em;
+    margin: 2em;
     height: 40vh;
     width: 35vw;
     background-color: var(--bgColor2);
