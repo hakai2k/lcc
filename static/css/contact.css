@@ -41,7 +41,7 @@
     box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
     padding: 0vh 3vw;
     height: 45vh;
-    width: 40vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -61,9 +61,11 @@
         width: 100%;
         background-color: var(--bgColor2);
         border: 3px solid var(--bgColor);
+        color: var(--paraColor);
         border-radius: 10px;
     }
     & textarea{
+        color: var(--paraColor);
         height: 6rem;
         width: 100%;
         background-color: var(--bgColor2);
@@ -72,6 +74,7 @@
         resize: none;
     }
     & button{
+        cursor: pointer;
         height: 3rem;
         width: 6rem;
         background-color: var(--btnColor);
@@ -87,6 +90,7 @@
 }
 
 .contact-info{
+    width: 35vw;
     background-color: var(--bgColor2);
     border-radius: 10px;
     box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);

@@ -7,15 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="preForm" method="post" enctype="multipart/form-data" action="http://127.0.0.1:5000/model.html">
-        <input type="file" id="image" name="image" accept="image/*">
-        <input type="radio" id="gender" name="gender" value="M">Male
-        <input type="radio" id="gender" name="gender" value="F">Female
-        <input type="text" id="age" name="age">
-        <input type="radio" id="view" name="view" value="AP">AP
-        <input type="radio" id="view" name="view" value="PA">PA
-        <input type="submit" class="submit">
-    </form>
+    <header>
+        <a href="index.html"> < Go back to main page </a>
+    </header>
+    <main>
+        <form id="preForm" method="post" enctype="multipart/form-data" action="http://127.0.0.1:5000/model.html">
+            <h2>Patient Details</h2>
+            <div class="form-main-container">
+                <div class="image-container">
+                    <input type="file" id="image" class="select-image" name="image" accept="image/*" required>
+                    <label for="image">Upload image</label>
+                </div>
+                <div class="form-container">
+                    <h4>Select Gender</h4>
+                    <div class="radio-container">
+                        <input type="radio" id="mgender" name="gender" value="M" required>
+                        <label for="mgender">Male</label>
+                        <input type="radio" id="fgender" name="gender" value="F" required>
+                        <label for="fgender">Female</label>
+                    </div>
+                    <input type="text" id="age" name="age" placeholder="Age" required>
+                    <h4>Select view type</h4>
+                    <div class="radio-container">
+                        <input type="radio" id="viewap" name="view" value="AP" required> 
+                        <label for="viewap">AP</label>
+                        <input type="radio" id="viewpa" name="view" value="PA" required>
+                        <label for="viewpa">PA</label>
+                    </div>
+                    <input type="submit" class="submit">
+                </div>
+            </div>
+        </form>
+        <div class="response-text">
+            <p id="output"></p>
+        </div>
+    </main>
     <script>
         const URL = 'http://127.0.0.1:5000/model.html'
         const preForm = document.getElementById('preForm')
@@ -24,7 +50,8 @@
             const data = new FormData(preForm)
             const response = await fetch(URL, {method:'POST', body:data})
             const prediction = await response.json()
-            console.log(prediction)
+            output = document.getElementById('output')
+            output.innerHTML = prediction
         }) 
     </script>
 </body>

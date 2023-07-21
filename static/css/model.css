@@ -1,0 +1,116 @@
+:root{
+    --bgColor: #151519;
+    --bgColor2: #242629;
+    --headerColor: #fffffe;
+    --paraColor: #94a1b2;
+    --btnColor: #7f5af0;
+    --btnText: #fffffe;
+    --secondary: #72757e;
+    --tertiary: #2cb67d;
+}
+
+@font-face {
+    font-family: 'Product Sans Regular';
+    src: url('fonts/product-sans/Product Sans Regular.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bgColor);
+    font-family: 'Product Sans Regular';
+    color: var(--headerColor);
+}
+
+header{
+    height: 10vh;
+    width: 100vw;
+    padding: 0% 10%;
+    display: flex;
+    align-items: center;
+    & a{
+        text-decoration: none;
+        color: var(--headerColor);
+        font-size: 20px;
+    }
+}
+
+main{
+    height: 80vh;
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+form{
+    height: 50vh;
+    width: 40vw;
+    background-color: var(--bgColor2);
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .form-main-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;
+        & input[type="text"]{
+            background-color: var(--bgColor2);
+            border: 2px solid var(--bgColor);
+            color: var(--headerColor);
+        }
+    }
+    .image-container{
+        & input{
+            display: none;
+        }
+        & label{
+            padding: 7rem 3rem;
+            border-radius: 5px;
+            border: 2px dotted var(--btnColor);
+        }
+    }
+}
+
+.submit{
+    cursor: pointer;
+    height: 2.5rem;
+    width: 6rem;
+    background-color: var(--btnColor);
+    border: none;
+    border-radius: 7px;
+    color: var(--btnText);
+}
+
+.radio-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    & input {
+        display: none;
+    }
+    & label {
+        padding: 5px 20px;
+        border: 2px solid var(--btnColor);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    & input:checked + label {
+        background-color: var(--btnColor);
+    }
+}

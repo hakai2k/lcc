@@ -51,6 +51,9 @@ html{
 .main-text{
     width: 50%;
     text-align: justify;
+    & span{
+        color: var(--btnColor);
+    }
 }
 
 .tryBtn{
