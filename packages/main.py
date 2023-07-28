@@ -75,7 +75,7 @@ model =  Model([added_model.input,
                 extra_model.input],
                 x)
 
-model.load_weights('D:\lcc\packages\models\Optimized CNN (Extra).hdf5' , by_name = True, skip_mismatch = True)
+model.load_weights('packages\models\Optimized CNN (Extra).hdf5' , by_name = True, skip_mismatch = True)
 
 def path_to_tensor(img_path, shape=(64, 64)):
     # loads RGB image as PIL.Image.Image type
