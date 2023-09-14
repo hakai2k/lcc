@@ -10,7 +10,7 @@
 }
 
 .about{
-    height: 180vh;
+    height: 130vh;
     padding: 5% 10%;
     background-color: var(--bgColor);
     display: flex;
@@ -43,12 +43,36 @@
 
 .about-cards{
     /* margin: 2em; */
-    height: 45vh;
+    height: 30vh;
     width: 38.7vw;
     background-color: var(--bgColor2);
     border-radius: 10px;
     box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
+    color: var(--paraColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    text-align: justify;
+    padding: 0 1rem;
+    & h2{
+        color: var(--headerColor);
+    }
+}
+
+.about-title{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    & img{
+        border-radius: 10px;
+        border: 2px solid var(--btnColor);
+        height: 50px;
+        width: 50px;
+        padding: 1rem;
+    }
 }
 
 .about-cards:hover{

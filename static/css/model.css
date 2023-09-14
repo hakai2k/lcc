@@ -80,9 +80,9 @@ form{
             display: none;
         }
         & label{
-            padding: 7rem 3rem;
+            padding: 1rem;
+            background-color: var(--btnColor);
             border-radius: 5px;
-            border: 2px dotted var(--btnColor);
         }
     }
 }
