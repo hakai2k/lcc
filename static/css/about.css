@@ -62,19 +62,6 @@
     }
 }
 
-.about-title{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    & img{
-        border-radius: 10px;
-        border: 2px solid var(--btnColor);
-        height: 50px;
-        width: 50px;
-        padding: 1rem;
-    }
-}
-
 .about-cards:hover{
     transition: 0.2s;
     box-shadow: 0px 2px 20px 0.5px rgba(99, 99, 99, 0.2);

@@ -15,6 +15,7 @@
             <h2>Patient Details</h2>
             <div class="form-main-container">
                 <div class="image-container">
+                    <img id="new-image" src="../static/css/logo/model/image-place-holder.png" alt="">
                     <input type="file" id="image" class="select-image" name="image" accept="image/*" required>
                     <label for="image">Upload image</label>
                 </div>
@@ -26,7 +27,7 @@
                         <input type="radio" id="fgender" name="gender" value="F" required>
                         <label for="fgender">Female</label>
                     </div>
-                    <input type="text" id="age" name="age" placeholder="Age" required>
+                    <input type="text" id="age" name="age" placeholder="Enter your age" required>
                     <h4>Select view type</h4>
                     <div class="radio-container">
                         <input type="radio" id="viewap" name="view" value="AP" required> 
@@ -45,15 +46,30 @@
     <section class="how-to-section">
     </section>
     <script>
-        const URL = 'http://127.0.0.1:5000/model.html'
+        const inputImage = document.getElementById('image')
+        const newImage = document.getElementById('new-image')
+        inputImage.onchange = function () {
+            newImage.src = URL.createObjectURL(inputImage.files[0])
+        }
+
+        const APIURL = 'http://127.0.0.1:5000/model.html'
         const preForm = document.getElementById('preForm')
+        const response_block = document.getElementsByClassName('response-text')
         preForm.addEventListener('submit', async (e) => {
             e.preventDefault()
             const data = new FormData(preForm)
-            const response = await fetch(URL, {method:'POST', body:data})
+            const response = await fetch(APIURL, {method:'POST', body:data})
             const prediction = await response.json()
             output = document.getElementById('output')
-            output.innerHTML = prediction
+            if (prediction < 40){
+                output.innerHTML = `According to the predictions, only less than ${prediction}% of the patterns indicate that there maybe cancer present in the lungs. However do not take this seriously as this model is still learning from new data.`
+            }
+            else if(prediction > 40 && prediction < 60){
+                output.innerHTML = `I have found over ${prediction}% patterns that match the symptoms that indicate that there is cancer being developed in the lungs. `
+            }
+            else{
+                output.innerHTML = `Over ${prediction} of the patterns match that there is cancer present in the lungs. There is enough evidence of cancer being present.`
+            }
         }) 
     </script>
 </body>
