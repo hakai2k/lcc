@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: 'Product Sans Regular';
-    src: url('fonts/product-sans/Product Sans Regular.ttf');
+    src: url('../fonts/product-sans/Product Sans Regular.ttf');
 }
 
 html::-webkit-scrollbar{

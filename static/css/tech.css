@@ -29,8 +29,6 @@
 }
 
 .tech-cards{
-    height: 25vh;
-    width: 80vw;
     display: flex;
     gap: 2rem;
     align-items: center;

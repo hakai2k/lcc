@@ -11,13 +11,29 @@
 
 @font-face {
     font-family: 'Product Sans Regular';
-    src: url('fonts/product-sans/Product Sans Regular.ttf');
+    src: url('../fonts/product-sans/Product Sans Regular.ttf');
 }
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html::-webkit-scrollbar{
+    width: 7px;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: var(--btnColor);
+}
+
+html::-webkit-scrollbar-track{
+    background-color: var(--bgColor);
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -94,12 +110,13 @@ form{
             background-color: var(--btnColor);
             border-radius: 5px;
             text-align: center;
+            cursor: pointer;
         }
         #new-image{
         box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            height: 180px;
-            width: 180px;
+            border-radius: 5px;
+            height: 190px;
+            width: 190px;
         }
     }
 }
@@ -133,10 +150,13 @@ form{
 }
 
 .response-text{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background-color: var(--bgColor2);
     border-radius: 10px;
     box-shadow: 0px 2px 20px 0.5px rgba(0, 0, 0, 0.2);
     width: 40vw;
     padding: 1rem;
+    text-align: center;
 }
