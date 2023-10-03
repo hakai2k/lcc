@@ -56,7 +56,7 @@ header{
 }
 
 main{
-    height: 80vh;
+    height: 90vh;
     padding: 5% 10%;
     display: flex;
     flex-direction : column;
@@ -66,7 +66,7 @@ main{
 }
 
 form{
-    height: 50vh;
+    height: 80vh;
     width: 40vw;
     background-color: var(--bgColor2);
     border-radius: 10px;
@@ -159,4 +159,25 @@ form{
     width: 40vw;
     padding: 1rem;
     text-align: center;
+}
+#output span{
+    font-weight: bolder;
+}
+
+.cancer-type{
+    background-color: var(--bgColor);
+    color: var(--headerColor);
+    border: 2px solid var(--btnColor);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.cancer-type:hover {
+    transition: 0.15s;
+    border-color: var(--btnColor);
+  }
+  
+.cancer-type:focus {
+    outline: none;
+    border-color: var(--btnColor);
 }

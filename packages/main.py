@@ -1,15 +1,11 @@
 import numpy as np
-import pandas as pd
-from glob import glob
 import keras.utils as image
-from keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D, Lambda
+from keras.layers import Conv2D, MaxPooling2D, Lambda
 from keras.layers import Dropout, Flatten, Dense
 from keras.models import Sequential
 from keras.layers import BatchNormalization
-from keras import regularizers
 from keras import applications
 from keras.models import Model
-from keras import optimizers
 from keras.layers import Input,concatenate
 from packages.spatial_transformer import SpatialTransformer
 import matplotlib.pyplot as plt 

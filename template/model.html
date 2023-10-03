@@ -28,6 +28,24 @@
                         <label for="fgender">Female</label>
                     </div>
                     <input type="text" id="age" name="age" placeholder="Enter your age" required>
+                    <select name="cancerType" id="cancerType" class="cancer-type">
+                        <option disabled selected hidden>Select an option</option>
+                        <option value="No Findings">No Findings</option>
+                        <option value="Cardiomegaly">Cardiomegaly</option>
+                        <option value="Atelectasis">Atelectasis</option>
+                        <option value="Emphysema">Emphysema</option>
+                        <option value="Effusion">Effusion</option>
+                        <option value="Hernia">Hernia</option>
+                        <option value="Nodule">Nodule</option>
+                        <option value="Pneumothorax">Pneumothorax</option>
+                        <option value="Pleural Thickening">Pleural Thickening</option>
+                        <option value="Mass">Mass</option>
+                        <option value="Edema">Edema</option>
+                        <option value="Consolidation">Consolidation</option>
+                        <option value="Infiltration">Infiltration</option>
+                        <option value="Fibrosis">Fibrosis</option>
+                        <option value="Pneumonia">Pneumonia</option>
+                    </select>
                     <h4>Select view type</h4>
                     <div class="radio-container">
                         <input type="radio" id="viewap" name="view" value="AP" required> 
@@ -55,20 +73,27 @@
         const response_block = document.getElementsByClassName('response-text')
         preForm.addEventListener('submit', async (e) => {
             e.preventDefault()
+            const cancerType = document.getElementById("cancerType").value
             const data = new FormData(preForm)
             const response = await fetch(APIURL, {method:'POST', body:data})
             const prediction = await response.json()
             output = document.getElementById('output')
-            if (prediction < 40){
-                output.innerHTML = `According to the predictions, only less than ${prediction}% of the patterns indicate that there maybe cancer present in the lungs. However do not take this seriously as this model is still learning from new data.`
+            if (prediction <= 10){
+                output.innerHTML = `It seems that there isn't enough patterns to identify cancer in the given image. Please verify whether the input fields are valid and try submitting a clear image.`
             }
-            else if(prediction > 40 && prediction < 60){
-                output.innerHTML = `I have found over ${prediction}% patterns that match the symptoms that indicate that there is cancer being developed in the lungs. `
+            if (prediction > 10 && prediction <= 40){
+                output.innerHTML = `According to the predictions, only less than <span>${prediction}%</span> of the patterns indicate traces of <span>${cancerType}</span>. Try submitting more X-Ray images to further validate the results.`
+            }
+            else if(prediction > 40 && prediction <= 70){
+                output.innerHTML = `According to the analysis the model has identified about <span>${prediction}%</span> of <span>${cancerType}</span> present in the provided X-Ray. It would be best to consult to a doctor for further treatment and medication.`
+            }
+            else if(prediction > 70 && prediction <= 100){
+                output.innerHTML = `The patterns for <span>${cancerType}</span> match up about <span>${prediction}%</span> according to the model. This signifies that the cancer is in a later stage and the patient must seek immediate medical attention from professionals.`
             }
             else{
-                output.innerHTML = `Over ${prediction} of the patterns match that there is cancer present in the lungs. There is enough evidence of cancer being present.`
+                output.innerHTML = `Looks like there are some input fields missing or an invalid file being processed. Please try to give valid inputs.`
             }
-        }) 
+        })
     </script>
 </body>
 </html>
