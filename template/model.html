@@ -82,7 +82,7 @@
                 output.innerHTML = `It seems that there isn't enough patterns to identify cancer in the given image. Please verify whether the input fields are valid and try submitting a clear image.`
             }
             if (prediction > 10 && prediction <= 40){
-                output.innerHTML = `According to the predictions, only less than <span>${prediction}%</span> of the patterns indicate traces of <span>${cancerType}</span>. Try submitting more X-Ray images to further validate the results.`
+                output.innerHTML = `According to the model, only <span>${prediction}%</span> of the patterns indicate traces of <span>${cancerType}</span>. Try submitting more X-Ray images to further validate the results.`
             }
             else if(prediction > 40 && prediction <= 70){
                 output.innerHTML = `According to the analysis the model has identified about <span>${prediction}%</span> of <span>${cancerType}</span> present in the provided X-Ray. It would be best to consult to a doctor for further treatment and medication.`
@@ -91,7 +91,7 @@
                 output.innerHTML = `The patterns for <span>${cancerType}</span> match up about <span>${prediction}%</span> according to the model. This signifies that the cancer is in a later stage and the patient must seek immediate medical attention from professionals.`
             }
             else{
-                output.innerHTML = `Looks like there are some input fields missing or an invalid file being processed. Please try to give valid inputs.`
+                output.innerHTML = `Looks like there are some input fields missing or an invalid file being processed, try submitting different X-Ray images for better results. Please try to give valid inputs.`
             }
         })
     </script>
